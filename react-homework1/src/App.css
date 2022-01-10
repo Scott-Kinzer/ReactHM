@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+.header {
+  display: flex;
+  max-width: 1140px;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.left-side {
+  width: 40%;
+}
+
+.right-side {
+  width: 50%;
+}
+
+.post-wrapper {
+  cursor: pointer;
+  margin: 5px auto;
+  width: 70%;
+  background: bisque;
+  border-radius: 10px;
+}
+
+.btn-wrap {
+  margin: 10px;
+}
+
+.post-wrapper-comment {
+  cursor: pointer;
+  margin: 5px auto;
+  border-radius: 10px;
+  background: darkkhaki;
+}
