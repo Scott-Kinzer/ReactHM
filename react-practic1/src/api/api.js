@@ -1,22 +1,22 @@
-const ApiUSERS = 'https://jsonplaceholder.typicode.com/users';
+const ApiShips = 'https://api.spacexdata.com/v3/launches/';
 
-export class ApiRequest {
+export function ApiRequest() {
 
-    async usersFetch() {
-        const dataUsers = await fetch(ApiUSERS).then(data => data.json());
-        return dataUsers;
+    this.shipsFetch = async () => {
+        return await fetch(ApiShips).then(data => data.json());
     }
 
-    async UserPosts(id) {
-        const dataPostOfUser = await fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`).then(data => data.json());
-        return dataPostOfUser;
+    this.shipInfoFetch = async (id) => {
+        return await fetch(`https://api.spacexdata.com/v3/launches/${id}`).then(data => data.json())
+            .then(dataShip => {
+            const {rocket: {rocket_id, rocket_name}, launch_date_utc, launch_site: {site_id} } = dataShip;
+            return {
+                rocket_id,
+                rocket_name,
+                launch_date_utc,
+                site_id
+            }
+        })
     }
-
-
-    async UserComements(idPost) {
-        const dataCommentOfUser = await fetch(`https://jsonplaceholder.typicode.com/posts/${idPost}/comments`).then(data => data.json());
-        return dataCommentOfUser;
-    }
-
 
 }

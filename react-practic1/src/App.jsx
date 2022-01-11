@@ -1,43 +1,24 @@
 import React, {useState} from 'react';
 import './App.css';
-import UsersList from './components/Users/UsersList';
-import PostsList from './components/Posts/PostsList';
-import CommentsList from './components/Comments/CommentsList';
+import ReadyComponent from "./components/ReadyComponent/ReadyComponent";
+import ShipsList from "./components/ShipsList/ShipsList";
+import PopUpInfoComponent from "./components/PopUpInfoComponent/PopUpInfoComponent";
+
 
 function App() {
 
-    const [idUser, setUserId] = useState(1);
-    const [idComment, setIdComment] = useState(1);
+    const [isShowSite, setShowSite] = useState(true);
+    const [isPopUp, setPopUp] = useState(false);
 
-    const idHandler = (id) => {
-        console.log(id);
-        setUserId(id);
-    }
-
-    const idHandlerComment = (id) => {
-        console.log(id);
-        setIdComment(id);
-    }
-
-
+    const [idShip, setIdShip] = useState(1);
 
 
     return (
     <div className="App">
+        {isShowSite &&  <ReadyComponent setShowSite={setShowSite} />}
+        {(!isShowSite  &&  <ShipsList setIdShip={setIdShip} setPopUp={setPopUp} />)}
 
-
-        <div className='header'>
-            <div className='left-side'>
-                <h2>USERS</h2>
-
-                <UsersList idHandler={idHandler} />
-            </div>
-
-            <PostsList idHandlerComment={idHandlerComment} idUser={idUser}/>
-            <CommentsList idComment={idComment} />
-        </div>
-
-
+        {isPopUp && <PopUpInfoComponent  idShip={idShip} setPopUp={setPopUp} />}
     </div>
   );
 }
