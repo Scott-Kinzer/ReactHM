@@ -19,7 +19,7 @@ const UserLists = (props) => {
 
     const [users, setUsers] = useState([]);
     const [textFilter, setTextFilter] = useState('');
-
+    const [chosenItem, setChosenItem] = useState('');
 
     useEffect(() => {
         const userFetchInstance = new ApiRequest();
@@ -28,18 +28,30 @@ const UserLists = (props) => {
     }, []);
 
 
-    const filterUsers = useMemo(() => {
+
+    let filterUsers = useMemo(() => {
         let filteredUsers = users.filter(user => {
             if (user.name.includes(textFilter)) {
                 return true;
             }
 
             return false;
-        });
+        }).map(item => {
+            if (item.id === chosenItem) {
+                return {
+                    ...item, chosen: true
+                }
+                
+            }
+
+            return item;
+        })
 
         return filteredUsers;
 
-    }, [textFilter, users]);
+    }, [textFilter, users, chosenItem]);
+
+     
 
 
 
@@ -52,6 +64,8 @@ const UserLists = (props) => {
                                      key={user.id}
                                      idUser={user.id}
                                      userName={user.name}
+                                     setChosenItem={setChosenItem}
+                                     userChosen={user.chosen}
             /> ) }
         </div>
     );
