@@ -93,27 +93,16 @@
   margin: 3px;
 }
 
-#switcher-app {
-  position: absolute!important;
-  display: block;
-  top: 20px;
-  left: 10px;
+.user-wrapper div {
+  margin: 10px;
+  font-size: 18px;
+
 }
 
-.user-details-wrapper {
-  position: relative;
+.user-wrapper {
+  display: flex;
 }
 
-.app-black {
-  background: rgb(138, 123, 123, 0.4);
-}
-
-.post-wrapper {
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.user-details-wrapper {
-  align-items: center;
-  justify-content: center;
+.input-wrapper {
+  display: flex;
 }
