@@ -15,7 +15,7 @@ class UsersList extends Component {
         const {putDetails} =this.props;
 
         return (
-            <div>
+            <div className='users-list'>
                 {this.state.listsUser.map((user) => {
                   return (
                   <User key={user.id} putDetails={putDetails} idUserDetails={user.id} name={user.name} />

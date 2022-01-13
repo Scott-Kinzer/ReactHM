@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import API from '../../api/api';
+import Post from '../Post/Post';
 
 class PostsList extends Component {
 
@@ -21,19 +22,28 @@ class PostsList extends Component {
                      new API().UserPosts(this.props.userIdForPost).then((arrayOfPosts) => this.setState({userPosts: arrayOfPosts}));
 
         }
+
+        if (prevProps.newPost !== this.props.newPost) {
+            const {body, title, userId} = this.props.newPost.user;
+            const id = new Date();
+            // console.log(this.props.newPost);
+            // debugger;
+            console.log('was updated here');
+            // debugger;
+                     this.setState({userPosts: [{body, title, userId, id}, ...prevState.userPosts]})
+
+        }
     }
 
     render() {
+        console.log(this.state.userPosts);
         return (
-            <div>
+            <div className='posts-wrapper'>
                 {this.state.userPosts.map(post => {
                     const {userId, title, body} = post;
                     return (
-                        <div key={post.id}>
-                            <div>{userId}</div>
-                            <div>{title}</div>
-                            <div>{body}</div>
-                        </div>
+                        <Post key={post.id} userId={userId} title={title} body={body}>
+                        </Post>
                     )
                 })}
             </div>
