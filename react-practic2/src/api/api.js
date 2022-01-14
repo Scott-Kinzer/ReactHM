@@ -3,14 +3,16 @@ const ApiUSERS = 'https://jsonplaceholder.typicode.com/users';
 
 class API {
 
-    async usersFetch() {
-        const dataUsers = await fetch(ApiUSERS).then(data => data.json());
-        return dataUsers;
+      usersFetch() {
+        // const dataUsers = await 
+        return fetch(ApiUSERS).then(data => data.json());
+        // return dataUsers;
     }
 
     async UserPosts(id) {
-        const dataPostOfUser = await fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`).then(data => data.json());
-        return dataPostOfUser;
+        // const dataPostOfUser = await 
+        return fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`).then(data => data.json());
+        // return dataPostOfUser;
     }
 
 
