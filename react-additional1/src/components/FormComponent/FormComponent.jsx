@@ -2,13 +2,13 @@ import React from 'react';
 import DeleteForm from '../DeleteForm/DeleteForm';
 import Form from '../Form/Form';
 
-const FormComponentWrapper = ({changerHandler, inputForm}) => {
+const FormComponentWrapper = ({changerHandler, formName ,inputForm}) => {
 
    
     if (!inputForm) {
         return (
             <div>
-                <Form changerHandler />
+                <Form formName={formName}  changerHandler={changerHandler} />
             </div>
         );
     }
