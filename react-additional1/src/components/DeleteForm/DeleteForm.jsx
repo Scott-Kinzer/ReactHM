@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import deleteForm from './delete.form.module.css';
+
 const DeleteForm = ({changerHandler}) => {
 
     const [id, setId] = useState(0);
@@ -13,7 +15,7 @@ const DeleteForm = ({changerHandler}) => {
         <form onSubmit={handlerDelete}>
             <input onChange={(e) => setId(e.currentTarget.value)} value={id}   placeholder='id' type="text" />
 
-            <input type="submit" value="DELETE CAR" />
+            <input type="submit" value="delete" />
         </form>
     );
 };

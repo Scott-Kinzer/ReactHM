@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Car from '../Car/Car';
 import FormComponentWrapper from '..//FormComponent/FormComponent';
 import ButtonComponent from '../ButtonComponent/ButtonComponent';
@@ -6,15 +7,13 @@ import ButtonComponent from '../ButtonComponent/ButtonComponent';
 import { useState, useEffect } from 'react';
 
 // ApiRequest
-import { ApiCar } from '../../api/api';
+import apiIntance from '../../api/api';
 
 // Helpers
 import {errorHandler} from '../../helpers/error.handler';
 import { buttonModes } from '../../helpers/button.modes';
+import { UpdateList } from '../../helpers/update.list';
 
-const UpdateList = (setCars) => {
-    new ApiCar().getApiCars().then(setCars);
-}
 
 const CarsList = () => {
 
@@ -23,11 +22,11 @@ const CarsList = () => {
     const [statusError, setStatusError] = useState(false);
 
     useEffect(() => {
-       new ApiCar().getApiCars().then(setCars);
+       apiIntance.getApiCars().then(setCars);
     }, []);
   
     const createCar = ({year, price, model}) => {
-        new ApiCar().createApiCar({year, price, model}).then(() => {
+        apiIntance.createApiCar({year, price, model}).then(() => {
             UpdateList(setCars);
         }).catch(e => {
             errorHandler(e, setStatusError);
@@ -35,7 +34,7 @@ const CarsList = () => {
     }
   
     const updateCar = ({id ,year, price, model}) => {
-        new ApiCar().updateApiCar({id ,year, price, model}).then(() => {
+        apiIntance.updateApiCar({id ,year, price, model}).then(() => {
             UpdateList(setCars)
         }).catch(e => {
             errorHandler(e, setStatusError);
@@ -43,7 +42,7 @@ const CarsList = () => {
     }
   
     const deleteCar = (id) => {
-        new ApiCar().deleteApiCar(id).then(() => {
+        apiIntance.deleteApiCar(id).then(() => {
             UpdateList(setCars)
         }).catch(e => {
             errorHandler(e, setStatusError);
@@ -63,11 +62,11 @@ const CarsList = () => {
             {
                 activeMode === 'create' ? <FormComponentWrapper formName={'Create Car'}  changerHandler={createCar}  /> :
                 activeMode === 'update' ? <FormComponentWrapper formName={'Update Car'}  changerHandler={updateCar} /> :
-                                            <FormComponentWrapper inputForm={'InputForm'} changerHandler={deleteCar} />
+                                            <FormComponentWrapper inputForm={'Delete Car'} changerHandler={deleteCar} />
             }
 
             {cars.map((car) => <Car key={car.id} 
-                                        car={car} />)}
+                                        car={car} />).reverse()}
         </div>
     );
 };

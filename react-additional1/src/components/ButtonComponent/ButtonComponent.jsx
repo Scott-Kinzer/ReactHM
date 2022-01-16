@@ -1,11 +1,14 @@
 import React from 'react';
 
-const ButtonComponent = ({activeMode, setActiveMode, buttonMode}) => {
+import {Button} from 'antd';
 
+const ButtonComponent = ({activeMode, setActiveMode, buttonMode}) => {
     return (
-        <button onClick={() => setActiveMode(buttonMode)} className={activeMode === buttonMode ? 'active': ''}>
+        <Button type="primary" onClick={() => setActiveMode(buttonMode)} 
+        style={activeMode === buttonMode ? { background: "red", margin: "7px" } : {margin: "5px"}}
+        >
                 {buttonMode}
-        </button>
+        </Button>
     );
 };
 

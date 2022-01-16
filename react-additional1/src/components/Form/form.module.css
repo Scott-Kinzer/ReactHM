@@ -1,0 +1,18 @@
+input[type=text] {
+    margin: 5px;
+    border: none;
+    background: rgb(159, 159, 204);
+    border-radius: 5px;
+    padding: 4px;
+}
+
+input[type=text]:focus {
+    margin: 5px;
+    background: rgb(67, 192, 67, 0.3);
+    opacity: 0.2;
+}
+
+input[type="submit"] {
+    background: tomato;
+
+}
