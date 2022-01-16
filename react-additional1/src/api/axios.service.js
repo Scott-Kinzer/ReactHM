@@ -1,5 +1,6 @@
 import axios from 'axios';
+import { baseURL } from './urls';
 
-const axiosService = axios.create({baseURL: 'http://91.201.233.14/api/v2'});
+const axiosService = axios.create({baseURL});
 
 export default axiosService;
