@@ -58,11 +58,13 @@ const CarsList = () => {
             {buttonModes.map((button, id) => <ButtonComponent key={id}
                 activeMode={activeMode}
                 setActiveMode={setActiveMode}
-                    buttonMode={button} />)}
+                    buttonMode={button} />)
+            }
+
             {
                 activeMode === 'create' ? <FormComponentWrapper formName={'Create Car'}  changerHandler={createCar}  /> :
                 activeMode === 'update' ? <FormComponentWrapper formName={'Update Car'}  changerHandler={updateCar} /> :
-                                            <FormComponentWrapper inputForm={'Delete Car'} changerHandler={deleteCar} />
+                                          <FormComponentWrapper inputForm={'Delete Car'} changerHandler={deleteCar} />
             }
 
             {cars.map((car) => <Car key={car.id} 
