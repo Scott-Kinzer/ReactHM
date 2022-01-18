@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import NavBar from '../pages/NavBar/NavBar';
+import {NavBar} from '../';
 
 const Layout = () => {
     return (
@@ -12,4 +12,4 @@ const Layout = () => {
     );
 };
 
-export default Layout;
+export {Layout};

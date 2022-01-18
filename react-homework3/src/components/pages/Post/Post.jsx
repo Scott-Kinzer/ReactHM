@@ -1,24 +1,25 @@
 import React from 'react';
 
+import style from './post.module.css';
+
 const Post = ({post, setPostId}) => {
 
     if (setPostId) {
         return (
             <div onClick={() => setPostId(post.id)}>
-                <div>{post.userId}</div>
-                <div>{post.title}</div>
-                <div>{post.body}</div>
+                <div>USER ID: {post.userId}</div>
+                <div>TITLE: {post.title}</div>
             </div>
         );
     }
 
     return (
-        <div>
-            <div>{post.userId}</div>
-            <div>{post.title}</div>
-            <div>{post.body}</div>
+        <div className={style.postWrapper}>
+            <div>USER ID: {post.userId}</div>
+            <div>TITLE: {post.title}</div>
+            <div>BODY: {post.body}</div>
         </div>
     );
 };
 
-export default Post;
+export {Post};

@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import CommentsList from '../CommentsList/CommentsList';
-import PostDetails from '../PostDetails/PostDetails';
-import PostsList from '../PostsList/PostsList';
+import React, { useState } from 'react';
 
+import { PostDetails, PostsList, CommentsList } from '../';
 
 import style from './posts.page.module.css';
 
@@ -25,4 +23,4 @@ const PostsPage = ({valueUser}) => {
     );
 };
 
-export default PostsPage;
+export {PostsPage};

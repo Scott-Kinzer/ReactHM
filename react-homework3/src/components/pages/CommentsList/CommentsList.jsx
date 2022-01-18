@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import apiIntance from '../../../api/api';
-import Comment from '../Comment/Comment';
+import {Comment} from '../';
 
 const CommentsList = ({postIdComments}) => {
     const [comments, setComments] = useState([]);
@@ -11,9 +11,10 @@ const CommentsList = ({postIdComments}) => {
     
     return (
         <div>
+            <h2>Comments list</h2>
             {comments.map((comment) =>  <Comment key={comment.id} comment={comment} /> )}
         </div>
     );
 };
 
-export default CommentsList;
+export {CommentsList};

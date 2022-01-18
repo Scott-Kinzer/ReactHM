@@ -1,7 +1,9 @@
 import React from 'react';
 import { useContext } from 'react';
+import { NavContext } from '../../../context/nav.context';
 
-import { NavContext } from '../../../api/context/nav.context';
+import style from './user.module.css';
+
 const User = ({user, setChosenUser}) => {
 
     const {setValueUser} = useContext(NavContext);
@@ -12,11 +14,11 @@ const User = ({user, setChosenUser}) => {
     }
 
     return (
-        <div onClick={() => handlerFunc()}>
+        <div className={style.userWrapper} onClick={() => handlerFunc()}>
             <div>{user.id}</div>
             <div>{user.name}</div>
         </div>
     );
 };
 
-export default User;
+export {User};

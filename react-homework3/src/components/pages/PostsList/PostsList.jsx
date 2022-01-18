@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import apiIntance from '../../../api/api';
-import Post from '../Post/Post';
+import {Post} from '../index';
 
 const PostsList = ({chosenUserPost, setPostId}) => {
 
@@ -30,13 +30,15 @@ const PostsList = ({chosenUserPost, setPostId}) => {
 
         return (
             <div>
+                <h2>POSTS</h2>
                 {posts.map((post) => <Post setPostId={setPostId} key={post.id} post={post} />)}
             </div>
         );
     }
 
     return (
-        <div>
+        <div>                
+            <h2>POSTS</h2>
             {posts.map((post) => <Post key={post.id} post={post} />)}
         </div>
     );
@@ -44,4 +46,4 @@ const PostsList = ({chosenUserPost, setPostId}) => {
 
 };
 
-export default PostsList;
+export {PostsList};

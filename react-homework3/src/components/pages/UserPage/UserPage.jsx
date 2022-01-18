@@ -1,13 +1,12 @@
-import React, { useContext } from 'react';
-import { useState, useEffect } from 'react';
-import PostsList from '../PostsList/PostsList';
-import UserDetails from '../UserDetails/UserDetails';
-import UsersList from '../UsersList/UsersList';
+import React, { useContext, useState, useEffect } from 'react';
 
 import apiIntance from '../../../api/api';
 
 import style from './user.page.module.css';
-import { NavContext } from '../../../api/context/nav.context';
+
+import { PostsList, UserDetails, UsersList } from '../';
+
+import { NavContext } from '../../../context/nav.context';
 
 const UserPage = () => {
 
@@ -34,4 +33,4 @@ const UserPage = () => {
     );
 };
 
-export default UserPage;
+export {UserPage};

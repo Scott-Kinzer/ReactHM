@@ -7,9 +7,8 @@ const NavBar = () => {
         <header>
             <Link to="/"><button>UserPage</button></Link>
             <Link to="posts"><button>POSTS</button></Link>
-
         </header>
     );
 };
 
-export default NavBar;
+export {NavBar};

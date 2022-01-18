@@ -13,10 +13,13 @@ const UserDetails = ({chosenUser, setChosenUserPost}) => {
 
     return (
         <div>
+            <h2>USER DETAILS</h2>
             {user && <div>
-                        <div>{user.id}</div>
-                        <div>{user.name}</div>
-                        <div>{user.username}</div>
+                        <div>ID: {user.id}</div>
+                        <div>NAME: {user.name}</div>
+                        <div>USERNAME: {user.username}</div>
+                        <div>PHONE: {user.phone}</div>
+
                         <button onClick={() => setChosenUserPost(user.id)}>LOAD POSTS</button>
                     </div>
             }
@@ -24,4 +27,4 @@ const UserDetails = ({chosenUser, setChosenUserPost}) => {
     );
 };
 
-export default UserDetails;
+export {UserDetails};
