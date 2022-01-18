@@ -5,7 +5,7 @@ import style from './nav.bar.module.css';
 const NavBar = () => {
     return (
         <header>
-            <button>USERS</button>
+            <Link to="/"><button>UserPage</button></Link>
             <Link to="posts"><button>POSTS</button></Link>
 
         </header>

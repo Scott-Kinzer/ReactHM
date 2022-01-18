@@ -17,18 +17,11 @@ function ApiUsers() {
         return axiosService.get(`${urlFetch.usersApi}/${id}/posts`).then((user) => user.data);
     }
 
-    // this.getApiCars = () => {
-    //     return axiosService.get(url.cars).then((cars) => cars.data);
-    // }
+    // https://jsonplaceholder.typicode.com/posts/22
 
-    // this.updateApiCar = ({id, year, model, price}) => {
-    //     return axiosService.patch(`${url.cars}/${id}`, {price, model, year}).then((cars) => cars);
-    // }
-
-    // this.deleteApiCar = (id) => {
-    //     return axiosService.delete(`${url.cars}/${id}`).then((car) => car);
-    // }
-
+    this.fetchUniquePost = (id) => {
+        return axiosService.get(`/posts/${id}`).then((user) => user.data);
+    }
 
 };
 const apiIntance = new ApiUsers();

@@ -10,6 +10,7 @@ import NavBar from './components/pages/NavBar/NavBar';
 import PostsPage from './components/pages/PostsPage/PostsPage';
 
 import { NavContext } from './api/context/nav.context';
+import Layout from './components/Layout/Layout';
 
 const App = () => {
   const [valueUser, setValueUser] = useState(1);
@@ -20,14 +21,21 @@ const App = () => {
 <NavContext.Provider value={setValueUser}>
     <Router>
         <Routes>
-              <Route path="/" element={
+              {/* <Route path="/" element={
+  
                   <>
-                    <NavBar/>
+                   
                     <UserPage/>
                   </>
                } 
-              />
-          <Route path="/posts" element={ <PostsPage valueUser={valueUser} /> } />
+              /> */}
+
+              <Route path="/"  element={ <Layout/>}>
+                <Route path="/" element={<UserPage />} />
+                <Route path="/posts" element={<PostsPage valueUser={valueUser} />} />
+
+              </Route>
+          {/* <Route path="/posts" element={ <PostsPage valueUser={valueUser} /> } /> */}
         </Routes>
     </Router>
   

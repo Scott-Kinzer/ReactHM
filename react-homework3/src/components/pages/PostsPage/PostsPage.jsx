@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import apiIntance from '../../../api/api';
+import PostDetails from '../PostDetails/PostDetails';
+import PostsList from '../PostsList/PostsList';
+
+
+import style from './posts.page.module.css';
 
 const PostsPage = ({valueUser}) => {
 
-    const [posts, setPosts] = useState([]);
 
-    useEffect(() => {
-        apiIntance.fetchUserPosts(valueUser).then((posts) => {
-            setPosts(posts)
-        });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    const [postId, setPostId] = useState(valueUser);
 
 
     return (
         <div>
-            {posts.map(post => <div>FETCH POSTS</div>)}
+            <div className={style.wrapperPosts}>
+                <PostsList setPostId={setPostId} chosenUserPost= {valueUser} />
+                <PostDetails postId={postId} />
+            </div>
+
         </div>
     );
 };
