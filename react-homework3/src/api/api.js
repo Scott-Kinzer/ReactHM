@@ -17,7 +17,6 @@ function ApiUsers() {
         return axiosService.get(`${urlFetch.usersApi}/${id}/posts`).then((user) => user.data);
     }
 
-    // https://jsonplaceholder.typicode.com/posts/22
 
     this.fetchUniquePost = (id) => {
         return axiosService.get(`/posts/${id}`).then((user) => user.data);
@@ -25,6 +24,14 @@ function ApiUsers() {
 
     this.fetchComments = (id) => {
         return axiosService.get(`/posts/${id}/comments`).then((user) => user.data);
+    }
+
+    this.fetchAlbums = (id) => {
+        return axiosService.get(`${urlFetch.usersApi}/${id}/albums`).then((albums) => albums.data);
+    }
+
+    this.fetchPhotosOfAlbums = (idAlbum) => {
+        return axiosService.get(`albums/${idAlbum}/photos`).then((photos) => photos.data);
     }
 
 };

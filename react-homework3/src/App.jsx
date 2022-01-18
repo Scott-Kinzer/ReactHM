@@ -23,6 +23,7 @@ const App = () => {
               <Route path="/"  element={ <Layout/>}>
                 <Route path="/" element={<UserPage />} />
                 <Route path="/posts" element={<PostsPage valueUser={valueUser} />} />
+                
               </Route>
         </Routes>
     </Router>
