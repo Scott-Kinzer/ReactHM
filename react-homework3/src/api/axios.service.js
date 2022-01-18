@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { baseURL } from './urls';
+import { ApiUSERS as baseURL } from './urls';
 
 const axiosService = axios.create({baseURL});
 
