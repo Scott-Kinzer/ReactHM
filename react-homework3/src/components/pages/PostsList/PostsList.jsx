@@ -13,7 +13,21 @@ const PostsList = ({chosenUserPost, setPostId}) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [chosenUserPost]);
 
+
+    useEffect(() => {
+        if (setPostId) {
+            if (posts.length) {
+                setPostId(posts[0].id);
+            }
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [posts]);
+
+
     if (setPostId) {
+
+     
+
         return (
             <div>
                 {posts.map((post) => <Post setPostId={setPostId} key={post.id} post={post} />)}

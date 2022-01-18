@@ -8,7 +8,7 @@ const UserDetails = ({chosenUser, setChosenUserPost}) => {
 
     useEffect(() => {
         apiIntance.fetchUser(chosenUser).then(user => setUser(user));
-    }, [chosenUser])
+    }, [chosenUser]);
 
 
     return (

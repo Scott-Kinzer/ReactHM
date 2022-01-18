@@ -4,11 +4,11 @@ import { useContext } from 'react';
 import { NavContext } from '../../../api/context/nav.context';
 const User = ({user, setChosenUser}) => {
 
-    const setUserForPostFunc = useContext(NavContext);
+    const {setValueUser} = useContext(NavContext);
     
     const handlerFunc = () => {
         setChosenUser(user.id);
-        setUserForPostFunc(user.id)
+        setValueUser(user.id)
     }
 
     return (

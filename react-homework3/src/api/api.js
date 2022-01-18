@@ -23,6 +23,10 @@ function ApiUsers() {
         return axiosService.get(`/posts/${id}`).then((user) => user.data);
     }
 
+    this.fetchComments = (id) => {
+        return axiosService.get(`/posts/${id}/comments`).then((user) => user.data);
+    }
+
 };
 const apiIntance = new ApiUsers();
 
