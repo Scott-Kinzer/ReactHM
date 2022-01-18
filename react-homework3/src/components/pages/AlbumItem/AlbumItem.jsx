@@ -17,8 +17,8 @@ const AlbumItem = ({album}) => {
 
     return (
         <div>
-            <div>{album.id}</div>
-            <div>{album.title}</div>
+            <div>ALBUM IT: {album.id}</div>
+            <div>ALBUM TITLE: {album.title}</div>
             <button onClick={handlerPhotos}>SHOW PHOTOS</button>
 
             {!!photos.length && <div className={style.albumsWrapper}>

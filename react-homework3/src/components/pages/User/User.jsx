@@ -9,7 +9,8 @@ import style from './user.module.css';
 const User = ({user, setChosenUser}) => {
 
     const {setValueUser} = useContext(NavContext);
-    
+    const [show, setShow] = useState(false);
+
     const [albums, setAlbums] = useState([]);
 
     const handlerAlbums = () => {
@@ -25,8 +26,14 @@ const User = ({user, setChosenUser}) => {
         <div className={style.userWrapper} onClick={() => handlerFunc()}>
             <div>{user.id}</div>
             <div>{user.name}</div>
-            <button onClick={handlerAlbums}>SET ALBUMS</button>
-            {albums.map(album => <AlbumItem key={album.id} album={album} />)}
+            <button onClick={() => {
+                handlerAlbums();
+                setShow(!show);
+            }}>{show ? "HIDE" : "SHOW"} ALBUMS</button>
+            {
+                show && albums.map(album => <AlbumItem key={album.id} album={album} />)
+            }
+            
 
         </div>
     );
