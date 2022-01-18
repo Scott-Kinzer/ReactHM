@@ -10,6 +10,7 @@ const AlbumItem = ({album}) => {
 
     const [photos, setPhotos] = useState([]);
 
+    const [show, setShow] = useState(false);
 
     const handlerPhotos = () => {
         apiIntance.fetchPhotosOfAlbums(album.id).then(photos => setPhotos(photos));
@@ -19,9 +20,12 @@ const AlbumItem = ({album}) => {
         <div>
             <div>ALBUM IT: {album.id}</div>
             <div>ALBUM TITLE: {album.title}</div>
-            <button onClick={handlerPhotos}>SHOW PHOTOS</button>
+            <button onClick={() => {
+                handlerPhotos();
+                setShow(!show);
+            }}>{show ? "HIDE" : "SHOW"} PHOTOS</button>
 
-            {!!photos.length && <div className={style.albumsWrapper}>
+           {show && !!photos.length && <div className={style.albumsWrapper}>
                 {photos.map(photo => <PhotoComponent key={photo.id} photo={photo} />)}
             </div>}
             

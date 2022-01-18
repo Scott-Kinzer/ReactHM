@@ -33,8 +33,6 @@ const User = ({user, setChosenUser}) => {
             {
                 show && albums.map(album => <AlbumItem key={album.id} album={album} />)
             }
-            
-
         </div>
     );
 };
