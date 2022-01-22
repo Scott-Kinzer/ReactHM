@@ -9,7 +9,6 @@ const AlbumItem = ({album}) => {
 
 
     const [photos, setPhotos] = useState([]);
-
     const [show, setShow] = useState(false);
 
     const handlerPhotos = () => {
