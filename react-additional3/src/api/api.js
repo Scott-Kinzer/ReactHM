@@ -11,6 +11,14 @@ function ApiCartoon() {
         return axiosService.get(`/episode?page=${idPage}`).then((response) => response.data);
     }
 
+    this.getEpisodeSingle = (idEpisode) => {
+        return axiosService.get(`/episode/${idEpisode}`).then((response) => response.data);
+    }
+
+    this.getCharacters = (arr) => {
+        return axiosService.get(`/character/${arr}`).then((response) => response.data);
+    }
+
 };
 const apiIntance = new ApiCartoon();
 

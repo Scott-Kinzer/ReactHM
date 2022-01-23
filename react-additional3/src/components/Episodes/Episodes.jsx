@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import apiIntance from '../../api/api';
 import Episode from '../Episode/Episode';
+import style from './episodes.module.css';
 
 const Episodes = ({setPage}) => {
 
@@ -26,7 +27,6 @@ const Episodes = ({setPage}) => {
 
     useEffect(() => {
         if (pageEpisodes) {
-            console.log(setPage);
 
             apiIntance.getEpisodesPage(pageEpisodes).then(episodes => {
               
@@ -49,8 +49,8 @@ const Episodes = ({setPage}) => {
 
     if (pageEpisodes) {
         return (
-            <div>
-                {!!episodes.length && episodes.map(episode => <Episode episode={episode} />)}
+            <div className={style.wrapperEpisodes}>
+                {!!episodes.length && episodes.map(episode => <Episode key={episode.id}   episode={episode} />)}
             </div>
         );
 
@@ -58,8 +58,8 @@ const Episodes = ({setPage}) => {
 
 
     return (
-        <div>
-            {!!episodes.length && episodes.map(episode => <Episode episode={episode} />)}
+        <div className={style.wrapperEpisodes}>
+            {!!episodes.length && episodes.map(episode => <Episode key={episode.id}  episode={episode} />)}
         </div>
     );
 };
