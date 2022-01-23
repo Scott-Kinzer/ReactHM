@@ -55,3 +55,7 @@
 button {
   width: 100px;
 }
+
+.disabled-link {
+  pointer-events: none;
+}
