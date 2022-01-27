@@ -70,3 +70,7 @@ button {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+li {
+  display: flex;
+}
