@@ -87,7 +87,7 @@ export const counterSlice = createSlice({
     },
 
     setFormCar: (state, action) => {
-
+        
         if (!action.payload) {
             state.formState = null;
             return;

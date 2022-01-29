@@ -22,17 +22,17 @@ import { store } from './store/store';
 const App = () => {
     return (
         
-        <div>
+        <div className="container">
             <Provider store={store}>
             <BrowserRouter>
                 <Routes>
                 <Route path="/" element={<Layout />}>
                 
-                    <Route path="cars" element={<Cars />}>
-                    <Route path="users" element={<Users />} />
+                    <Route path="cars" element={<Cars />} />
+                    <Route path="/users" element={<Users />} />
                     <Route path="posts" element={<Posts />} />
                     <Route path="comments" element={<Comments />} />
-                    </Route>
+                  
                 </Route>
                 </Routes>
             </BrowserRouter>

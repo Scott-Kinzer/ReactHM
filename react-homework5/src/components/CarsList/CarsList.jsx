@@ -5,7 +5,7 @@ import Car from '../Car/Car';
 
 const CarsList = () => {
 
-    const cars = useSelector((state) => state.cars);
+    const cars = useSelector((state) => state.carReducer.cars);
     const dispatch = useDispatch();
 
     useEffect(() => {

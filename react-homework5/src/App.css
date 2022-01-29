@@ -36,11 +36,15 @@
     transform: rotate(360deg);
   }
 }
-.header {
+
+header {
   display: flex;
   max-width: 1140px;
   margin: 0 auto;
   justify-content: space-around;
+  height: 60px;
+  background: gold;
+  align-items: center;
 }
 
 

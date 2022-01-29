@@ -9,7 +9,7 @@ const FormCar = () => {
     const { register, handleSubmit, reset, setValue } = useForm();
     const dispatch = useDispatch();
 
-    const formCar = useSelector(state => state.formState);
+    const formCar = useSelector(state => state.carReducer.formState);
 
     const onSubmit = data => {
         dispatch(createCarThunk({id: 44, data}));
