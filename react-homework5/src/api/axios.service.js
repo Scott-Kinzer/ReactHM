@@ -7,5 +7,5 @@ const axiosService = axios.create({baseURL});
 export default axiosService;
 
 
-export const axiosServiceUsers = axios.create({baseURL: 'https://jsonplaceholder.typicode.com/users'});
+export const axiosServiceUsers = axios.create({baseURL: 'https://jsonplaceholder.typicode.com/'});
 

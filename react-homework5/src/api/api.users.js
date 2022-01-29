@@ -4,11 +4,16 @@ import {axiosServiceUsers} from "./axios.service";
 
 function ApiUsers() {
     this.usersFetch = () => {
-        return axiosServiceUsers.get().then((response) => response.data);
+        return axiosServiceUsers.get('users').then((response) => response.data);
     }
 
     this.postsFetch = (id) => {
-        return axiosServiceUsers.get(`/${id}/posts`).then((response) => response.data);
+        return axiosServiceUsers.get(`users/${id}/posts`).then((response) => response.data);
+    }
+
+    this.fetchComments = (id) => {
+    
+        return axiosServiceUsers.get(`/posts/${id}/comments`).then((user) => user.data);
     }
 };
 

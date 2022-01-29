@@ -5,11 +5,13 @@ import carReducer from '../features/car/carSlice';
 import userReducer from '../features/user/userSlice';
 import postReducer from '../features/post/postSlice';
 
+import commentReducer from '../features/comment/commentSlice';
 
 const reducer = combineReducers({
   carReducer,
   userReducer,
-  postReducer
+  postReducer,
+  commentReducer
 });
 
 export const store = configureStore({

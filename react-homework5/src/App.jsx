@@ -33,7 +33,7 @@ const App = () => {
 
                     <Route exact path="/users" element={<Users />} />
                     <Route path="/users/details/:idUser" element={<Posts />} />
-                    <Route path="comments" element={<Comments />} />
+                    <Route path="details/comments/:commentId" element={<Comments />} />
                     {/* </Route> */}
                     
                     
