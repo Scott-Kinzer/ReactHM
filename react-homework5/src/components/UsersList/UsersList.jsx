@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers } from '../../features/user/userSlice';
+import User from '../User/User';
 
 const UsersList = () => {
 
@@ -16,7 +17,7 @@ const UsersList = () => {
 
     return (
         <div>
-            {users.map(user => <div>{user.name}</div>)}
+            {users.map(user => <User key={user.id} user={user} />)}
         </div>
     );
 };

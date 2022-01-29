@@ -78,3 +78,21 @@ button {
 li {
   display: flex;
 }
+
+.post {
+  /* display: flex; */
+  /* justify-content: space-around; */
+  margin: 5px;
+  background: tan;
+  align-items: center;
+  max-width: 400px;
+  cursor: pointer;
+
+}
+
+.posts {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

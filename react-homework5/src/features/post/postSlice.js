@@ -2,13 +2,13 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import apiIntance from '../../api/api.users';
 
 const initialState= {
-  users: [],
+  posts: [],
 }
 
-export const fetchUsers = createAsyncThunk(
-    'users/fetchUsers',
-    async () => {
-      const response = await apiIntance.usersFetch();
+export const fetchPosts = createAsyncThunk(
+    'posts/fetchPosts',
+    async (id) => {
+      const response = await apiIntance.postsFetch(id);
       return response;
     }
   )
@@ -22,8 +22,8 @@ export const counterSlice = createSlice({
   },
 
   extraReducers: {
-    [fetchUsers.fulfilled]: (state, action) => {
-      state.users = action.payload
+    [fetchPosts.fulfilled]: (state, action) => {
+      state.posts = action.payload
   }
 },
 
@@ -32,6 +32,6 @@ export const counterSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { addCar } = counterSlice.actions;
+export const {  } = counterSlice.actions;
 
 export default counterSlice.reducer;

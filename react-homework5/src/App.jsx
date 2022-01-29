@@ -30,8 +30,13 @@ const App = () => {
                 
                     <Route path="cars" element={<Cars />} />
                     <Route path="/users" element={<Users />} />
-                    <Route path="posts" element={<Posts />} />
+
+                    <Route exact path="/users" element={<Users />} />
+                    <Route path="/users/details/:idUser" element={<Posts />} />
                     <Route path="comments" element={<Comments />} />
+                    {/* </Route> */}
+                    
+                    
                   
                 </Route>
                 </Routes>
