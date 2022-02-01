@@ -35,9 +35,7 @@ const App = () => {
                     <Route path="/users/details/:idUser" element={<Posts />} />
                     <Route path="details/comments/:commentId" element={<Comments />} />
                     {/* </Route> */}
-                    
-                    
-                  
+                
                 </Route>
                 </Routes>
             </BrowserRouter>
