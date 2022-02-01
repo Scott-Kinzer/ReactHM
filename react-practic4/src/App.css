@@ -96,3 +96,7 @@ li {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.line {
+  text-decoration: line-through;
+}
